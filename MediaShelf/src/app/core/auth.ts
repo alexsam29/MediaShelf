@@ -4,7 +4,7 @@ import { from, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private auth: Auth) {}
+  constructor(private auth: Auth) { }
 
   login(email: string, password: string): Observable<any> {
     return from(signInWithEmailAndPassword(this.auth, email, password));
@@ -16,5 +16,14 @@ export class AuthService {
 
   logout(): Observable<void> {
     return from(signOut(this.auth));
+  }
+
+  isAuthenticated(): Observable<boolean> {
+    return new Observable<boolean>((observer) => {
+      this.auth.onAuthStateChanged((user) => {
+        observer.next(!!user);
+        observer.complete();
+      });
+    });
   }
 }

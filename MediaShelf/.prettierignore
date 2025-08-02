@@ -1,0 +1,62 @@
+# Ignore artifacts:
+build
+coverage
+
+# Build outputs
+build/
+dist/
+out/
+*.min.js
+*.min.css
+
+# Dependencies
+node_modules/
+vendor/
+
+# Generated files
+*.generated.*
+*.d.ts
+coverage/
+docs/
+
+# Configuration files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Angular specific
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Documentation
+CHANGELOG.md
+LICENSE
+
+# Large data files
+*.csv
+*.json (if they're large data files)
+
+# Third-party libraries
+lib/
+libs/
+public/assets/vendor/

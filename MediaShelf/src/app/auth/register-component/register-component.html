@@ -1,1 +1,57 @@
-<p>register-component works!</p>
+<div class="register-container">
+  <mat-card>
+    <h2>Create Account</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-error *ngIf="email?.hasError('required')"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="email?.hasError('email')"
+          >Please enter a valid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required />
+        <mat-error *ngIf="password?.hasError('required')"
+          >Password is required</mat-error
+        >
+        <mat-error *ngIf="password?.hasError('minlength')"
+          >Password must be at least 6 characters</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          type="password"
+          formControlName="confirmPassword"
+          required
+        />
+        <mat-error *ngIf="confirmPassword?.hasError('required')"
+          >Please confirm your password</mat-error
+        >
+        <mat-error *ngIf="confirmPassword?.hasError('passwordMismatch')"
+          >Passwords do not match</mat-error
+        >
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        type="submit"
+        [disabled]="registerForm.invalid"
+        class="full-width"
+        style="margin-bottom: 0.5rem"
+      >
+        Create Account
+      </button>
+      <a mat-button class="full-width" routerLink="/login">
+        Already have an account? Sign In
+      </a>
+    </form>
+  </mat-card>
+</div>

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home-component/home-component';
 import { authGuard } from './auth/auth-guard/auth-guard';
 import { LoginComponent } from './auth/login-component/login-component';
+import { RegisterComponent } from './auth/register-component/register-component';
 
 export const routes: Routes = [
   // Define your application routes here
@@ -15,5 +16,10 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     title: 'Login Page',
+  },
+  {
+    path: 'signUp',
+    component: RegisterComponent,
+    title: 'Sign Up Page',
   },
 ];

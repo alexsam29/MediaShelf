@@ -1,1 +1,39 @@
-<p>login-component works!</p>
+<div class="login-container">
+  <mat-card>
+    <h2>Log In</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-error *ngIf="email?.hasError('required')"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="email?.hasError('email')"
+          >Please enter a valid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required />
+        <mat-error *ngIf="password?.hasError('required')"
+          >Password is required</mat-error
+        >
+        <mat-error *ngIf="password?.hasError('minlength')"
+          >Password must be at least 6 characters</mat-error
+        >
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="full-width"
+        style="margin-bottom: 0.5rem"
+      >
+        Log In
+      </button>
+      <a mat-raised-button class="full-width" routerLink="/signUp"> Sign Up </a>
+    </form>
+  </mat-card>
+</div>

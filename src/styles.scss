@@ -46,47 +46,47 @@ body {
 }
 
 .success-button {
-  --mat-button-filled-container-color: #3A863D;
+  --mat-button-filled-container-color: #3a863d;
   --mat-button-filled-label-text-color: white;
 
-  --mat-button-text-label-text-color: #3A863D;
-  --mat-button-text-state-layer-color: #3A863D;
+  --mat-button-text-label-text-color: #3a863d;
+  --mat-button-text-state-layer-color: #3a863d;
 }
 
 .error-button {
-  --mat-button-filled-container-color: #E91B0C;
+  --mat-button-filled-container-color: #e91b0c;
   --mat-button-filled-label-text-color: white;
 
-  --mat-button-text-label-text-color: #E91B0C;
-  --mat-button-text-state-layer-color: #E91B0C;
+  --mat-button-text-label-text-color: #e91b0c;
+  --mat-button-text-state-layer-color: #e91b0c;
 }
 
 .warning-button {
-  --mat-button-filled-container-color: #D68100;
+  --mat-button-filled-container-color: #d68100;
   --mat-button-filled-label-text-color: Black;
 }
 
 // Dark mode colors
 @media (prefers-color-scheme: dark) {
   .success-button {
-    --mat-button-filled-container-color: #9BD4A0;
-    --mat-button-filled-label-text-color: #183A19;
+    --mat-button-filled-container-color: #9bd4a0;
+    --mat-button-filled-label-text-color: #183a19;
 
-    --mat-button-text-label-text-color: #9BD4A0;
-    --mat-button-text-state-layer-color: #9BD4A0;
+    --mat-button-text-label-text-color: #9bd4a0;
+    --mat-button-text-state-layer-color: #9bd4a0;
   }
 
   .error-button {
-    --mat-button-filled-container-color: #F8B6B5;
+    --mat-button-filled-container-color: #f8b6b5;
     --mat-button-filled-label-text-color: #650908;
-    --mat-button-text-label-text-color: #F8B6B5;
+    --mat-button-text-label-text-color: #f8b6b5;
   }
 
   .warning-button {
-    --mat-button-filled-container-color: #FFBA52;
-    --mat-button-filled-label-text-color: #462A00;
-    --mat-button-text-label-text-color: #FFBA52;
-    --mat-button-text-state-layer-color: #FFBA52;
+    --mat-button-filled-container-color: #ffba52;
+    --mat-button-filled-label-text-color: #462a00;
+    --mat-button-text-label-text-color: #ffba52;
+    --mat-button-text-state-layer-color: #ffba52;
   }
 }
 

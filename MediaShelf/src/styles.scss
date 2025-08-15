@@ -22,7 +22,7 @@ body {
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
   // user's system settings.
-  color-scheme: light;
+  color-scheme: light dark;
 
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
@@ -43,4 +43,53 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.success-button {
+  --mat-button-filled-container-color: #3A863D;
+  --mat-button-filled-label-text-color: white;
+
+  --mat-button-text-label-text-color: #3A863D;
+  --mat-button-text-state-layer-color: #3A863D;
+}
+
+.error-button {
+  --mat-button-filled-container-color: #E91B0C;
+  --mat-button-filled-label-text-color: white;
+
+  --mat-button-text-label-text-color: #E91B0C;
+  --mat-button-text-state-layer-color: #E91B0C;
+}
+
+.warning-button {
+  --mat-button-filled-container-color: #D68100;
+  --mat-button-filled-label-text-color: Black;
+}
+
+// Dark mode colors
+@media (prefers-color-scheme: dark) {
+  .success-button {
+    --mat-button-filled-container-color: #9BD4A0;
+    --mat-button-filled-label-text-color: #183A19;
+
+    --mat-button-text-label-text-color: #9BD4A0;
+    --mat-button-text-state-layer-color: #9BD4A0;
+  }
+
+  .error-button {
+    --mat-button-filled-container-color: #F8B6B5;
+    --mat-button-filled-label-text-color: #650908;
+    --mat-button-text-label-text-color: #F8B6B5;
+  }
+
+  .warning-button {
+    --mat-button-filled-container-color: #FFBA52;
+    --mat-button-filled-label-text-color: #462A00;
+    --mat-button-text-label-text-color: #FFBA52;
+    --mat-button-text-state-layer-color: #FFBA52;
+  }
+}
+
+mat-form-field {
+  width: 100%;
 }

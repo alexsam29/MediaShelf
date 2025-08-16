@@ -2,6 +2,12 @@
   <mat-card>
     <h2>Log In</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- General error message -->
+      <div *ngIf="wrongCredentials" class="error-message">
+        <mat-icon>error</mat-icon>
+        <span>Invalid email or password. Please try again.</span>
+      </div>
+
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" required />
@@ -33,7 +39,7 @@
       >
         Log In
       </button>
-      <a mat-raised-button class="full-width" routerLink="/signUp"> Sign Up </a>
+      <a mat-raised-button class="full-width" routerLink="/signUp">Sign Up</a>
     </form>
   </mat-card>
 </div>

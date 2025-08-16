@@ -24,4 +24,12 @@
       gap: 1rem;
     }
   }
+
+  .error-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem;
+    color: #e91b0c;
+  }
 }

@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <!-- Mobile hamburger button -->
+  <button
+    mat-icon-button
+    class="mobile-menu-button"
+    (click)="onMenuToggle()"
+    aria-label="Toggle menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Logo/App name -->
+  <span class="app-title">MediaShelf</span>
+
+  <!-- Desktop navigation -->
+  <div class="desktop-nav">
+    <button mat-button>Home</button>
+    <button mat-button>Library</button>
+  </div>
+
+  <span class="spacer"></span>
+
+  <!-- Desktop action buttons -->
+  <div class="desktop-actions">
+    <button mat-icon-button aria-label="Favorites">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-button>Profile</button>
+    <button mat-button class="error-button" (click)="onLogout()">
+      <mat-icon>logout</mat-icon>Log Out
+    </button>
+  </div>
+</mat-toolbar>

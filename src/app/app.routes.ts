@@ -1,25 +1,36 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home-component/home-component';
+import { MainLayoutComponent } from './layouts/main-layout-component/main-layout-component';
 import { authGuard } from './auth/auth-guard/auth-guard';
-import { LoginComponent } from './auth/login-component/login-component';
-import { RegisterComponent } from './auth/register-component/register-component';
 
 export const routes: Routes = [
-  // Define your application routes here
-  {
-    path: '',
-    component: HomeComponent,
-    title: 'Home Page',
-    canActivate: [authGuard],
-  },
+  // Auth routes (no layout)
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'login',
-    component: LoginComponent,
-    title: 'Login Page',
+    loadComponent: () =>
+      import('./auth/login-component/login-component').then(
+        (m) => m.LoginComponent,
+      ),
   },
   {
     path: 'signUp',
-    component: RegisterComponent,
-    title: 'Sign Up Page',
+    loadComponent: () =>
+      import('./auth/register-component/register-component').then(
+        (m) => m.RegisterComponent,
+      ),
+  },
+
+  // Main app routes (with layout)
+  {
+    path: '',
+    component: MainLayoutComponent,
+    canActivate: [authGuard],
+    children: [
+      {
+        path: 'home',
+        loadComponent: () =>
+          import('./pages/home/home-component').then((m) => m.HomeComponent),
+      },
+    ],
   },
 ];

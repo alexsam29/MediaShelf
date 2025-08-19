@@ -1,0 +1,53 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+// Desktop styles
+.desktop-nav,
+.desktop-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.sidenav-container {
+  height: calc(100vh - 64px); // Subtract toolbar height
+}
+
+.mobile-sidenav {
+  width: 280px;
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .desktop-nav,
+  .desktop-actions {
+    display: none;
+  }
+
+  .app-title {
+    margin-left: 1rem;
+  }
+}
+
+// Tablet styles
+@media (max-width: 1024px) and (min-width: 769px) {
+  .desktop-nav button {
+    padding: 0 8px;
+    font-size: 0.9rem;
+  }
+}

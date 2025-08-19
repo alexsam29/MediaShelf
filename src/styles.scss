@@ -51,6 +51,7 @@ body {
 
   --mat-button-text-label-text-color: #3a863d;
   --mat-button-text-state-layer-color: #3a863d;
+  --mat-button-protected-label-text-color: #3a863d;
 }
 
 .error-button {
@@ -59,6 +60,8 @@ body {
 
   --mat-button-text-label-text-color: #e91b0c;
   --mat-button-text-state-layer-color: #e91b0c;
+
+  --mat-button-protected-label-text-color: #e91b0c;
 }
 
 .warning-button {
@@ -74,12 +77,14 @@ body {
 
     --mat-button-text-label-text-color: #9bd4a0;
     --mat-button-text-state-layer-color: #9bd4a0;
+    --mat-button-protected-label-text-color: #9bd4a0;
   }
 
   .error-button {
     --mat-button-filled-container-color: #f8b6b5;
     --mat-button-filled-label-text-color: #650908;
     --mat-button-text-label-text-color: #f8b6b5;
+    --mat-button-protected-label-text-color: #f8b6b5;
   }
 
   .warning-button {
@@ -87,6 +92,7 @@ body {
     --mat-button-filled-label-text-color: #462a00;
     --mat-button-text-label-text-color: #ffba52;
     --mat-button-text-state-layer-color: #ffba52;
+    --mat-button-protected-label-text-color: #ffba52;
   }
 }
 

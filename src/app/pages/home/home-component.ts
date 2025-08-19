@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { SHARED_IMPORTS } from '../shared/shared-imports';
-import { AuthService } from '../core/auth';
+import { SHARED_IMPORTS } from '../../shared/shared-imports';
+import { AuthService } from '../../core/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class HomeComponent {
   onLogout() {
     this.authService.logout().subscribe({
       next: () => this.router.navigate(['/login']),
-      error: (error) => console.error('Logout failed', error),
+      error: (error: any) => console.error('Logout failed', error),
     });
   }
 }

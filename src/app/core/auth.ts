@@ -13,16 +13,19 @@ import { from, Observable, BehaviorSubject } from 'rxjs';
 export class AuthService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  private authInitialized = new BehaviorSubject<boolean>(false);
 
   // Public observables
   public currentUser$ = this.currentUserSubject.asObservable();
   public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
+  public authInitialized$ = this.authInitialized.asObservable();
 
   constructor(private auth: Auth) {
     // Listen to auth state changes and update the subjects
     onAuthStateChanged(this.auth, (user) => {
       this.currentUserSubject.next(user);
       this.isAuthenticatedSubject.next(!!user);
+      this.authInitialized.next(true);
     });
   }
 
@@ -48,8 +51,8 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  // Observable method for compatibility
-  isAuthenticatedObservable(): Observable<boolean> {
-    return this.isAuthenticated$;
+  // Check if auth has been initialized
+  get isAuthInitialized(): boolean {
+    return this.authInitialized.value;
   }
 }

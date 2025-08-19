@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+@if (!authInitialized) {
+  <app-loading></app-loading>
+} @else if (authInitialized) {
+  <router-outlet></router-outlet>
+}
